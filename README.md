@@ -24,7 +24,7 @@ inefficient.
 What is the big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
 
-
+Since we go through all the elements to set dist values for all vertices, we have O(V) time. The outerloop goes through each vertex to mark each unvisited vertex and then finds the unvisited vertex with the smallest distance O(V). In the inner loop each selected vertex's edges are checked across all iterations of the outer loop (O(E)). So we have O(V) per iteration x V iterations which is $O(V^2)$. Then to account for the edges is $O(V^2 + E)$ but since E is at most $V^2$, the time complexity simplifies to $O(V^2)$. With the worst case being a dense graph or a V x V graph, the big $\Theta$ complexity is $\Theta(V^2)$
 
 ## Sources
 
