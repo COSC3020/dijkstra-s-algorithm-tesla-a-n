@@ -1,6 +1,15 @@
 const fs = require('fs');
 const jsc = require('jsverify');
+
 eval(fs.readFileSync('code.js')+'');
+
+const graph = [
+  [0, 1, Infinity],
+  [Infinity, 0, 1],
+  [Infinity, Infinity, 0]
+];
+const distances = dijkstra(graph, 0);
+console.log(distances); // Expected: [0, 1, 2]
 
 const testLinearGraph = jsc.forall("bool", function() {
   const graph = [
