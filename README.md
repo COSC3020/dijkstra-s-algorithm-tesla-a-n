@@ -23,3 +23,10 @@ inefficient.
 
 What is the big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+
+
+## Sources
+
+[GeeksforGeeks](https://www.geeksforgeeks.org/introduction-to-dijkstras-shortest-path-algorithm/#dijkstras-algorithm)
+
