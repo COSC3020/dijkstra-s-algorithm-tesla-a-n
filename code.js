@@ -1,9 +1,9 @@
 function dijkstra(graph, sourceNode) {
     // Initialize distance array with Infinity for all nodes except source
-    const distance = new Array(numVertices).fill(Infinity);
+    const distance = new Array(graph.length).fill(Infinity);
     distance[sourceNode] = 0;
     // Track which vertices are already processed
-    const visited = new Set();
+    const visited = new Array(graph.length).fill(false);
     //process the vertices
     while (visited.length !== graph.length) {
         // Find the unvisited vertex with minimum distance
@@ -23,7 +23,7 @@ function dijkstra(graph, sourceNode) {
         //keep distance to adjacent vertices
         for (let v = 0; v < graph.length; v++) {
             // Check if an edge and the vertex hasn't been visited
-            if (graph[minVertex][v] !== Infinity && !visited[v]) {
+            if (graph[minVertex][v] !== Infinity && graph[minVertex][v] !== 0 && !visited[v]) {
                 const newDistance = distance[minVertex] + graph[minVertex][v];
                 if (newDistance < distance[v]) {
                     distance[v] = newDistance;
@@ -31,5 +31,5 @@ function dijkstra(graph, sourceNode) {
             }
         }
     }
-    return distance
+    return distance;
 }
